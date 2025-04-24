@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices vs Monolith Architecture | devs.solutions Blog</title>
+    <meta name="description" content="An in-depth comparison of microservices and monolithic architectures, helping startups choose the right approach for their projects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8A2BE2',
+                        secondary: '#FF3399',
+                        dark: '#0A0A1A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                        <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-primary transition-colors">Home</a>
+                    <a href="../services.html" class="text-white hover:text-primary transition-colors">Services</a>
+                    <a href="../about-us.html" class="text-white hover:text-primary transition-colors">About Us</a>
+                    <a href="../portfolio.html" class="text-white hover:text-primary transition-colors">Portfolio</a>
+                    <a href="../blog.html" class="text-primary">Blog</a>
+                    <a href="../contact.html" class="bg-primary hover:bg-primary/80 px-6 py-2 rounded-full transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Content -->
+    <article class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Article Header -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-sm text-gray-400">June 15, 2024</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Architecture</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Microservices vs Monolith: Choosing the Right Architecture for Your Startup</h1>
+                    <p class="text-xl text-gray-300">
+                        A comprehensive guide to help you make an informed decision between microservices and monolithic architectures for your next project.
+                    </p>
+                </div>
+
+                <!-- Article Image -->
+                <div class="rounded-3xl overflow-hidden mb-12">
+                    <img src="https://placehold.co/1200x600/8A2BE2/FFFFFF/png?text=Architecture+Comparison" alt="Microservices vs Monolith Architecture" class="w-full">
+                </div>
+
+                <!-- Article Content -->
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <!-- Introduction Section -->
+                    <div class="bg-dark/30 rounded-3xl p-8 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-primary">Introduction</h2>
+                        <p class="text-xl leading-relaxed">
+                            When starting a new project, one of the most crucial architectural decisions is choosing between a monolithic or microservices architecture. This choice can significantly impact your application's scalability, maintainability, and development speed. In this article, we'll explore both approaches in detail and provide guidance on making the right choice for your specific needs.
+                        </p>
+                    </div>
+
+                    <!-- Comparison Grid -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <!-- Monolithic Architecture -->
+                        <div class="bg-dark/30 rounded-3xl p-8">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="text-primary">
+                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                    </svg>
+                                </div>
+                                <h2 class="text-2xl font-bold">Monolithic Architecture</h2>
+                            </div>
+                            <p class="mb-6">
+                                A traditional unified model where all components of an application are interconnected and operate as a single unit.
+                            </p>
+                            <div class="bg-dark/20 rounded-2xl p-6 mb-6">
+                                <h3 class="font-bold mb-4">Key Characteristics:</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">✓</span>
+                                        Single codebase and deployment unit
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">✓</span>
+                                        Shared database
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">✓</span>
+                                        Tightly coupled components
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">✓</span>
+                                        Simpler development and deployment process
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-primary/10 rounded-2xl p-6">
+                                <h3 class="font-bold mb-4">Advantages:</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">→</span>
+                                        Easier development and debugging in early stages
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">→</span>
+                                        Simpler deployment and monitoring
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">→</span>
+                                        Better performance for small applications
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">→</span>
+                                        Lower operational complexity
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Microservices Architecture -->
+                        <div class="bg-dark/30 rounded-3xl p-8">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="text-secondary">
+                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                    </svg>
+                                </div>
+                                <h2 class="text-2xl font-bold">Microservices Architecture</h2>
+                            </div>
+                            <p class="mb-6">
+                                An architectural style that structures an application as a collection of small, independent services that communicate through APIs.
+                            </p>
+                            <div class="bg-dark/20 rounded-2xl p-6 mb-6">
+                                <h3 class="font-bold mb-4">Key Characteristics:</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">✓</span>
+                                        Independently deployable
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">✓</span>
+                                        Loosely coupled
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">✓</span>
+                                        Organized around business capabilities
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">✓</span>
+                                        Owned by small, autonomous teams
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-secondary/10 rounded-2xl p-6">
+                                <h3 class="font-bold mb-4">Advantages:</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">→</span>
+                                        Better scalability for specific components
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">→</span>
+                                        Technology flexibility for different services
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">→</span>
+                                        Improved fault isolation
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">→</span>
+                                        Independent deployment and development
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decision Guide -->
+                    <div class="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl p-8 mb-12">
+                        <h2 class="text-3xl font-bold mb-8">Making the Right Choice</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-dark/30 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold mb-4 text-primary">Choose Monolithic Architecture When:</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">⭐</span>
+                                        Building a startup or MVP
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">⭐</span>
+                                        Working with a small team
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">⭐</span>
+                                        Requirements are simple and well-defined
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-primary">⭐</span>
+                                        Time to market is crucial
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark/30 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold mb-4 text-secondary">Choose Microservices Architecture When:</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">⭐</span>
+                                        Building a large, complex application
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">⭐</span>
+                                        Expecting high scalability needs
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">⭐</span>
+                                        Working with multiple teams
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="text-secondary">⭐</span>
+                                        Requiring frequent updates to specific components
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Example Section -->
+                    <div class="bg-dark/30 rounded-3xl p-8 mb-12">
+                        <h2 class="text-3xl font-bold mb-8">Real-World Example: E-commerce Platform</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-primary">Monolithic Approach</h3>
+                                <div class="bg-dark/20 rounded-2xl p-6">
+                                    <pre class="text-sm"><code>
+// Single Application Structure
+src/
+  ├── controllers/
+  │   ├── ProductController.java
+  │   ├── OrderController.java
+  │   └── UserController.java
+  ├── services/
+  │   ├── ProductService.java
+  │   ├── OrderService.java
+  │   └── UserService.java
+  ├── models/
+  │   ├── Product.java
+  │   ├── Order.java
+  │   └── User.java
+  └── database/
+      └── SharedDatabase</code></pre>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-secondary">Microservices Approach</h3>
+                                <div class="bg-dark/20 rounded-2xl p-6">
+                                    <pre class="text-sm"><code>
+// Multiple Independent Services
+product-service/
+  ├── src/
+  │   └── ProductService
+  ├── Dockerfile
+  └── database/
+
+order-service/
+  ├── src/
+  │   └── OrderService
+  ├── Dockerfile
+  └── database/
+
+user-service/
+  ├── src/
+  │   └── UserService
+  ├── Dockerfile
+  └── database/</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Best Practices -->
+                    <div class="bg-gradient-to-br from-primary/20 via-dark to-secondary/20 rounded-3xl p-8 mb-12">
+                        <h2 class="text-3xl font-bold mb-6">Implementation Considerations</h2>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-dark/30 rounded-2xl p-6">
+                                <div class="text-primary mb-4">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-bold mb-3">Start Smart</h3>
+                                <p>Begin with a well-organized monolith that follows clean architecture principles</p>
+                            </div>
+                            <div class="bg-dark/30 rounded-2xl p-6">
+                                <div class="text-secondary mb-4">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-bold mb-3">Plan for Scale</h3>
+                                <p>Design with future growth in mind and implement proper monitoring</p>
+                            </div>
+                            <div class="bg-dark/30 rounded-2xl p-6">
+                                <div class="text-primary mb-4">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-bold mb-3">Consider Containers</h3>
+                                <p>Evaluate containerization options from the beginning of development</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conclusion -->
+                    <div class="bg-dark/30 rounded-3xl p-8 mb-12">
+                        <h2 class="text-3xl font-bold mb-6">Conclusion</h2>
+                        <p class="text-xl leading-relaxed mb-8">
+                            Both architectures have their place in modern application development. The key is understanding your specific needs, team capabilities, and business goals. Remember that you can always start with a well-structured monolith and gradually migrate to microservices as your application grows and requirements become more complex.
+                        </p>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="bg-gradient-to-r from-primary to-secondary rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-4">Need Help Deciding?</h3>
+                        <p class="text-xl mb-6">
+                            Our team of experts can help you evaluate your specific needs and choose the right architecture for your project. Contact us for a free consultation.
+                        </p>
+                        <a href="../contact.html" class="inline-block bg-white text-dark px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-colors">
+                            Schedule a Consultation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Author Info -->
+                <div class="mt-12 p-6 bg-dark/30 rounded-3xl">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
+                        <div>
+                            <h3 class="font-bold">Written by David Chen</h3>
+                            <p class="text-gray-400">Lead Solutions Architect at devs.solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Buttons -->
+                <div class="mt-12 flex items-center gap-4">
+                    <span class="text-gray-400">Share this article:</span>
+                    <a href="#" class="text-gray-400 hover:text-primary">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="py-24 bg-dark/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Related Articles</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <a href="serverless-architecture.html">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=Serverless" alt="Serverless Architecture" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Serverless Architecture: Best Practices</h3>
+                            <p class="text-gray-300">Learn how to leverage serverless computing for scalable applications.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <a href="api-design.html">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/FF3399/FFFFFF/png?text=API+Design" alt="API Design" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">RESTful API Design Principles</h3>
+                            <p class="text-gray-300">Best practices for designing scalable and maintainable APIs.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <a href="docker-kubernetes.html">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=Containers" alt="Docker and Kubernetes" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Container Orchestration with Kubernetes</h3>
+                            <p class="text-gray-300">A guide to managing containerized applications at scale.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark/80 backdrop-blur-lg py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                        <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                    </div>
+                    <p class="text-gray-400">Digital solutions for innovative startups</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../services.html#web" class="hover:text-primary">Web Development</a></li>
+                        <li><a href="../services.html#mobile" class="hover:text-primary">Mobile Development</a></li>
+                        <li><a href="../services.html#management" class="hover:text-primary">Management</a></li>
+                        <li><a href="../services.html#modernization" class="hover:text-primary">Modernization</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../about-us.html" class="hover:text-primary">About Us</a></li>
+                        <li><a href="../portfolio.html" class="hover:text-primary">Portfolio</a></li>
+                        <li><a href="../blog.html" class="hover:text-primary">Blog</a></li>
+                        <li><a href="../contact.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@devs.solutions</li>
+                        <li>📱 +34 600 123 456</li>
+                        <li>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2024 devs.solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

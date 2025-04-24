@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="devs.solutions - Digital solutions for innovative startups. We provide web development, mobile development, and application management services.">
+    <meta name="theme-color" content="#8A2BE2">
+    <title>devs.solutions - Digital Solutions for Startups</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8A2BE2',
+                        secondary: '#FF3399',
+                        dark: '#0A0A1A'
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-display: swap;
+            src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+        }
+
+        .card-hover {
+            @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/10;
+        }
+
+        .btn-primary {
+            @apply inline-block bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105;
+        }
+
+        .icon-container {
+            @apply w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform;
+        }
+
+        /* Optimización de carga de imágenes */
+        img {
+            loading: lazy;
+        }
+
+        /* Mejora de accesibilidad */
+        .sr-only {
+            @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+        }
+
+        /* Animaciones optimizadas */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                    <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-primary transition-colors">Home</a>
+                    <a href="servicios.html" class="text-white hover:text-primary transition-colors">Services</a>
+                    <a href="sobre-nosotros.html" class="text-white hover:text-primary transition-colors">About Us</a>
+                    <a href="portfolio.html" class="text-white hover:text-primary transition-colors">Portfolio</a>
+                    <a href="blog.html" class="text-white hover:text-primary transition-colors">Blog</a>
+                    <button onclick="openContactModal()" class="bg-primary hover:bg-primary/80 px-6 py-2 rounded-full transition-colors">Contact</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-dark to-dark/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('wave-bg.jpg')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Empowering your startup with custom digital solutions
+                </h1>
+                <p class="text-xl text-gray-300 mb-12">
+                    Transforming your ideas into scalable technology solutions
+                </p>
+                <button onclick="openContactModal()" class="inline-block bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                    Request a free consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-24 bg-dark/50 backdrop-blur-lg relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Our Services</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Comprehensive digital solutions to transform your startup into a technology leader</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Web Service -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6 relative">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">🌐</span>
+                        </div>
+                        <div class="absolute -right-2 -top-2 bg-primary/20 px-3 py-1 rounded-full text-xs font-semibold">Popular</div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Web Development</h3>
+                    <p class="text-gray-400 mb-4">Modern and scalable web applications with the latest technologies</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Single Page Applications</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Progressive Web Apps</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Responsive Design</li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Service -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">📱</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Mobile Development</h3>
+                    <p class="text-gray-400 mb-4">Native and hybrid apps for iOS and Android</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Cross-platform Apps</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Native Performance</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Offline Support</li>
+                    </ul>
+                </div>
+
+                <!-- Management -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">⚙️</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Application Management</h3>
+                    <p class="text-gray-400 mb-4">Continuous application management and maintenance</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> 24/7 Monitoring</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Performance Optimization</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Security Updates</li>
+                    </ul>
+                </div>
+
+                <!-- Modernization -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">🔄</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Modernization</h3>
+                    <p class="text-gray-400 mb-4">Updating and improving existing applications</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Code Refactoring</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Technology Migration</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Performance Boost</li>
+                    </ul>
+                </div>
+
+                <!-- Integration -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">🔗</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Integration</h3>
+                    <p class="text-gray-400 mb-4">Seamless connection between systems and applications</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> API Development</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Third-party Integration</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Data Synchronization</li>
+                    </ul>
+                </div>
+
+                <!-- Security -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">🔒</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Security</h3>
+                    <p class="text-gray-400 mb-4">Application protection and auditing</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Security Audits</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Vulnerability Testing</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Compliance Support</li>
+                    </ul>
+                </div>
+
+                <!-- Testing -->
+                <div class="group bg-dark/30 p-8 rounded-2xl backdrop-blur-lg hover:transform hover:-translate-y-2 transition-all border border-transparent hover:border-primary/30">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-3xl">✅</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Testing & QA</h3>
+                    <p class="text-gray-400 mb-4">Quality assurance and comprehensive testing</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Automated Testing</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Performance Testing</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✓</span> User Experience Testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-semibold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Technologies We Use</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">React</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">Vue.js</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">Node.js</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">React Native</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">Flutter</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">AWS</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">Docker</span>
+                    <span class="px-4 py-2 bg-dark/30 rounded-full text-sm text-gray-400 border border-primary/30">Kubernetes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits for Startups -->
+    <section class="py-24 bg-gradient-to-b from-dark to-dark/80">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Benefits for your Startup</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Constant Innovation</h3>
+                    <p class="text-gray-400">We implement the latest technologies to maintain your competitive advantage</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Scalability</h3>
+                    <p class="text-gray-400">Solutions that grow with your business without compromising performance</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Cost Optimization</h3>
+                    <p class="text-gray-400">We maximize the return on your technology investment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-dark/50 backdrop-blur-lg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-dark/30 p-8 rounded-2xl backdrop-blur-lg">
+                    <p class="text-gray-400 mb-6">"The devs.solutions team transformed our idea into an exceptional application. Their focus on quality and user experience exceeded our expectations."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full"></div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Jose Luis García</h4>
+                            <p class="text-gray-400">CEO, TechStartup</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-dark/30 p-8 rounded-2xl backdrop-blur-lg">
+                    <p class="text-gray-400 mb-6">"The modernization of our platform was a total success. Performance improved significantly and our users are delighted."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full"></div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Manuel Fernández</h4>
+                            <p class="text-gray-400">CTO, InnovateTech</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-dark/30 p-8 rounded-2xl backdrop-blur-lg">
+                    <p class="text-gray-400 mb-6">"Their expertise in security and testing gave us the confidence we needed to launch our financial application. A truly professional team."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full"></div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Laura Martínez</h4>
+                            <p class="text-gray-400">Founder, FinTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to boost your startup?</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto">Schedule a free consultation and discover how we can help you achieve your technology goals</p>
+            <button onclick="openContactModal()" class="inline-block bg-white text-dark hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                Get Started Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-dark/95 rounded-3xl p-8 max-w-md w-full mx-4 relative">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-6 text-primary">Contact Us</h3>
+            <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                    <input type="email" id="email" required
+                        class="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="your@email.com">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number (Optional)</label>
+                    <input type="tel" id="phone"
+                        class="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="+1 (234) 567-8900">
+                </div>
+                <button type="submit" 
+                    class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // Optimización del JavaScript
+    const contactModal = {
+        modal: document.getElementById('contactModal'),
+        form: document.getElementById('contactForm'),
+        
+        init() {
+            this.setupEventListeners();
+        },
+        
+        setupEventListeners() {
+            // Delegación de eventos para mejor rendimiento
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('[data-open-modal]')) {
+                    this.open();
+                } else if (e.target.matches('[data-close-modal]') || 
+                          (e.target === this.modal)) {
+                    this.close();
+                }
+            });
+
+            this.form.addEventListener('submit', this.handleSubmit.bind(this));
+        },
+        
+        open() {
+            this.modal.classList.remove('hidden');
+            this.modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Enfoque en el primer campo para mejor accesibilidad
+            setTimeout(() => {
+                this.form.querySelector('input').focus();
+            }, 100);
+        },
+        
+        close() {
+            this.modal.classList.add('hidden');
+            this.modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        },
+        
+        async handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this.form);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                // Aquí iría la lógica de envío del formulario
+                console.log('Form submitted:', data);
+                
+                // Simulación de envío exitoso
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                alert('¡Gracias! Nos pondremos en contacto contigo pronto.');
+                this.form.reset();
+                this.close();
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+            }
+        }
+    };
+
+    // Inicialización cuando el DOM está listo
+    document.addEventListener('DOMContentLoaded', () => {
+        contactModal.init();
+        
+        // Lazy loading de imágenes
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        if ('loading' in HTMLImageElement.prototype) {
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback para navegadores que no soportan lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+        
+        // Optimización de scroll
+        const scrollElements = document.querySelectorAll('[data-scroll]');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        
+        scrollElements.forEach(el => observer.observe(el));
+    });
+
+    // Service Worker para PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').catch(console.error);
+        });
+    }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-dark/80 backdrop-blur-lg py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                        <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                    </div>
+                    <p class="text-gray-400">Digital solutions for innovative startups</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="servicios.html#web" class="hover:text-primary">Web Development</a></li>
+                        <li><a href="servicios.html#mobile" class="hover:text-primary">Mobile Development</a></li>
+                        <li><a href="servicios.html#management" class="hover:text-primary">Management</a></li>
+                        <li><a href="servicios.html#modernization" class="hover:text-primary">Modernization</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="sobre-nosotros.html" class="hover:text-primary">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-primary">Portfolio</a></li>
+                        <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
+                        <li><a href="contacto.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@devs.solutions</li>
+                        <li>📱 +34 600 123 456</li>
+                        <li>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2024 devs.solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

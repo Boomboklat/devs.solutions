@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - devs.solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8A2BE2',
+                        secondary: '#FF3399',
+                        dark: '#0A0A1A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                    <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-primary transition-colors">Home</a>
+                    <a href="servicios.html" class="text-primary">Services</a>
+                    <a href="about-us.html" class="text-white hover:text-primary transition-colors">About Us</a>
+                    <a href="portfolio.html" class="text-white hover:text-primary transition-colors">Portfolio</a>
+                    <a href="blog.html" class="text-white hover:text-primary transition-colors">Blog</a>
+                    <button onclick="openContactModal()" class="bg-primary hover:bg-primary/80 px-6 py-2 rounded-full transition-colors">Contact</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-dark to-dark/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('wave-bg.jpg')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-primary text-lg font-semibold mb-4 block">OUR SERVICES</span>
+                <h1 class="text-5xl font-bold mb-8">Digital Solutions for Your Startup Success</h1>
+                <p class="text-xl text-gray-300">
+                    We transform innovative ideas into scalable digital products, using the latest technologies and development best practices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Features -->
+    <section class="py-16 bg-dark/50 backdrop-blur-lg relative">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex items-center space-x-4 bg-dark/30 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Agile Development</h3>
+                        <p class="text-gray-400 text-sm">Fast and continuous delivery</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 bg-dark/30 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Secure Code</h3>
+                        <p class="text-gray-400 text-sm">Maximum data protection</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 bg-dark/30 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Scalability</h3>
+                        <p class="text-gray-400 text-sm">Grow without limits</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 bg-dark/30 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">24/7 Support</h3>
+                        <p class="text-gray-400 text-sm">Always available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Development -->
+    <section id="web" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-primary text-lg font-semibold mb-4 block">WEB DEVELOPMENT</span>
+                    <h2 class="text-4xl font-bold mb-6">High-Performance Web Applications</h2>
+                    <p class="text-gray-300 mb-8">
+                        We create modern and scalable web applications that transform how users interact with your business. Our focus is on user experience and performance.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Responsive Design</h3>
+                            <p class="text-gray-400 text-sm">Adaptable to all devices</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">High Performance</h3>
+                            <p class="text-gray-400 text-sm">Fast and optimized loading</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">SEO Optimized</h3>
+                            <p class="text-gray-400 text-sm">Greater online visibility</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Advanced Security</h3>
+                            <p class="text-gray-400 text-sm">Protection against threats</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">React</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Vue.js</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Node.js</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">TypeScript</span>
+                    </div>
+                    <a href="contacto.html" class="inline-flex items-center bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-3 rounded-full transition-all transform hover:scale-105">
+                        <span>Request Quote</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10 rounded-3xl"></div>
+                    <div class="relative bg-dark/50 backdrop-blur-xl p-8 rounded-3xl border border-gray-800">
+                        <h3 class="text-2xl font-semibold mb-6">Benefits for Startups</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Reduced Time-to-Market</h4>
+                                    <p class="text-gray-400">Agile development that gets your product to market faster</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Guaranteed Scalability</h4>
+                                    <p class="text-gray-400">Architecture ready to grow with your business</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Cost Optimization</h4>
+                                    <p class="text-gray-400">Efficient solutions that maximize your investment</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Development -->
+    <section id="mobile" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10 rounded-3xl"></div>
+                        <div class="relative bg-dark/50 backdrop-blur-xl p-8 rounded-3xl border border-gray-800">
+                            <h3 class="text-2xl font-semibold mb-6">Our Development Process</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <span class="text-primary font-semibold">1</span>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">Requirements Analysis</h4>
+                                        <p class="text-gray-400">Understanding your needs and objectives</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <span class="text-primary font-semibold">2</span>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">UX/UI Design</h4>
+                                        <p class="text-gray-400">Creating intuitive and attractive interfaces</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <span class="text-primary font-semibold">3</span>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">Development & Testing</h4>
+                                        <p class="text-gray-400">Building and validating functionality</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <span class="text-primary font-semibold">4</span>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">Launch & Support</h4>
+                                        <p class="text-gray-400">Deployment and continuous maintenance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-primary text-lg font-semibold mb-4 block">MOBILE DEVELOPMENT</span>
+                    <h2 class="text-4xl font-bold mb-6">Native & Cross-Platform Apps</h2>
+                    <p class="text-gray-300 mb-8">
+                        We develop high-quality mobile applications that provide exceptional user experiences and help you reach your audience effectively.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Native Apps</h3>
+                            <p class="text-gray-400 text-sm">iOS and Android</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Cross-Platform</h3>
+                            <p class="text-gray-400 text-sm">React Native & Flutter</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Swift</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Kotlin</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">React Native</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Flutter</span>
+                    </div>
+                    <a href="contacto.html" class="inline-flex items-center bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-3 rounded-full transition-all transform hover:scale-105">
+                        <span>Start Your Project</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Management -->
+    <section id="management" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-primary text-lg font-semibold mb-4 block">APPLICATION MANAGEMENT</span>
+                    <h2 class="text-4xl font-bold mb-6">Gestión Integral de Aplicaciones</h2>
+                    <p class="text-gray-300 mb-8">
+                        Mantenemos y optimizamos tus aplicaciones para garantizar su rendimiento óptimo y evolución continua. Nuestro equipo se encarga de todo el ciclo de vida de tu aplicación.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Monitorización 24/7</h3>
+                            <p class="text-gray-400 text-sm">Supervisión continua del rendimiento</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Actualizaciones</h3>
+                            <p class="text-gray-400 text-sm">Mejoras continuas</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Seguridad</h3>
+                            <p class="text-gray-400 text-sm">Protección continua</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Optimización</h3>
+                            <p class="text-gray-400 text-sm">Mejora continua</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">DevOps</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">CI/CD</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Cloud</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Monitoring</span>
+                    </div>
+                    <a href="contacto.html" class="inline-flex items-center bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-3 rounded-full transition-all transform hover:scale-105">
+                        <span>Solicitar Presupuesto</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10 rounded-3xl"></div>
+                    <div class="relative bg-dark/50 backdrop-blur-xl p-8 rounded-3xl border border-gray-800">
+                        <h3 class="text-2xl font-semibold mb-6">Nuestro Proceso</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-primary font-semibold">1</span>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Análisis Inicial</h4>
+                                    <p class="text-gray-400">Evaluación completa de la aplicación</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-primary font-semibold">2</span>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Plan de Optimización</h4>
+                                    <p class="text-gray-400">Estrategia personalizada de mejora</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-primary font-semibold">3</span>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Implementación</h4>
+                                    <p class="text-gray-400">Ejecución de mejoras y actualizaciones</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-primary font-semibold">4</span>
+                                </span>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Monitorización Continua</h4>
+                                    <p class="text-gray-400">Seguimiento y ajustes constantes</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modernization -->
+    <section id="modernizacion" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10 rounded-3xl"></div>
+                        <div class="relative bg-dark/50 backdrop-blur-xl p-8 rounded-3xl border border-gray-800">
+                            <h3 class="text-2xl font-semibold mb-6">Benefits of Modernization</h3>
+                            <ul class="space-y-6">
+                                <li class="flex items-start">
+                                    <span class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">Enhanced Performance</h4>
+                                        <p class="text-gray-400">Significant improvement in speed and efficiency</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">Cost Reduction</h4>
+                                        <p class="text-gray-400">Resource and maintenance optimization</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                        </svg>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold mb-1">Enhanced Security</h4>
+                                        <p class="text-gray-400">Update to modern security standards</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-primary text-lg font-semibold mb-4 block">MODERNIZATION</span>
+                    <h2 class="text-4xl font-bold mb-6">Take Your Application to the Next Level</h2>
+                    <p class="text-gray-300 mb-8">
+                        We transform legacy applications into modern and efficient solutions. We use the latest technologies and best practices to ensure your application is future-ready.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Modern Architecture</h3>
+                            <p class="text-gray-400 text-sm">Scalable and flexible design</p>
+                        </div>
+                        <div class="bg-dark/30 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold mb-2">Data Migration</h3>
+                            <p class="text-gray-400 text-sm">Secure transition</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Cloud Native</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Microservices</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">REST API</span>
+                        <span class="px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary">Containers</span>
+                    </div>
+                    <a href="contacto.html" class="inline-flex items-center bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-3 rounded-full transition-all transform hover:scale-105">
+                        <span>Request Free Assessment</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Need to modernize your application?</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto">
+                Schedule a free consultation and discover how we can help transform your application
+            </p>
+            <a href="/contacto.html" class="inline-block bg-white text-dark hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                Request Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark/80 backdrop-blur-lg py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                        <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                    </div>
+                    <p class="text-gray-400">Digital solutions for innovative startups</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#web" class="hover:text-primary">Web Development</a></li>
+                        <li><a href="#mobile" class="hover:text-primary">Mobile Development</a></li>
+                        <li><a href="#management" class="hover:text-primary">Management</a></li>
+                        <li><a href="#modernization" class="hover:text-primary">Modernization</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="sobre-nosotros.html" class="hover:text-primary">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-primary">Portfolio</a></li>
+                        <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
+                        <li><a href="contacto.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@devs.solutions</li>
+                        <li>📱 +34 600 123 456</li>
+                        <li>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2024 devs.solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-dark/95 rounded-3xl p-8 max-w-md w-full mx-4 relative">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-6 text-primary">Contact Us</h3>
+            <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                    <input type="email" id="email" required
+                        class="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="your@email.com">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number (Optional)</label>
+                    <input type="tel" id="phone"
+                        class="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="+1 (234) 567-8900">
+                </div>
+                <button type="submit" 
+                    class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.getElementById('contactModal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.getElementById('contactModal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Aquí puedes agregar la lógica para enviar los datos
+            console.log('Form submitted:', { email, phone });
+            
+            // Mostrar mensaje de éxito
+            alert('¡Gracias! Nos pondremos en contacto contigo pronto.');
+            closeContactModal();
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeContactModal();
+            }
+        });
+    </script>
+</body>
+</html> 

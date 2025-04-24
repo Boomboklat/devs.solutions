@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | devs.solutions - Software and App Development Experts</title>
+    <meta name="description" content="Explore our portfolio of successful projects in web development, mobile apps, and digital transformation. See how we help startups achieve their technological goals.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8A2BE2',
+                        secondary: '#FF3399',
+                        dark: '#0A0A1A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                    <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-primary transition-colors">Home</a>
+                    <a href="servicios.html" class="text-white hover:text-primary transition-colors">Services</a>
+                    <a href="about-us.html" class="text-white hover:text-primary transition-colors">About Us</a>
+                    <a href="portfolio.html" class="text-primary">Portfolio</a>
+                    <a href="blog.html" class="text-white hover:text-primary transition-colors">Blog</a>
+                    <button onclick="openContactModal()" class="bg-primary hover:bg-primary/80 px-6 py-2 rounded-full transition-colors">Contact</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-dark to-dark/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('wave-bg.jpg')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl font-bold mb-8">Our Success Stories</h1>
+                <p class="text-xl text-gray-300">
+                    Discover how we've helped startups and businesses transform their ideas into powerful digital solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-24 bg-dark/50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- HealthTech Project -->
+                <div class="group relative overflow-hidden rounded-3xl bg-dark/30 hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/800x600/8A2BE2/FFFFFF/png?text=HealthConnect+App" alt="HealthConnect App" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">HealthConnect App</h3>
+                        <p class="text-gray-300 mb-6">
+                            A telemedicine platform that connects patients with healthcare providers. Features include video consultations, prescription management, and medical record tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">MongoDB</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">WebRTC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FinTech Project -->
+                <div class="group relative overflow-hidden rounded-3xl bg-dark/30 hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/800x600/FF3399/FFFFFF/png?text=PaySmart+Platform" alt="PaySmart Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">PaySmart Platform</h3>
+                        <p class="text-gray-300 mb-6">
+                            A modern payment processing platform for small businesses, featuring instant transfers, automated invoicing, and detailed analytics dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Stripe API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Projects Grid -->
+    <section class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">More Success Stories</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- E-commerce Project -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=FashionFlex" alt="FashionFlex E-commerce" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">FashionFlex E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Modern e-commerce platform with AR try-on features and AI-powered recommendations.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Next.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Shopify</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EdTech Project -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/FF3399/FFFFFF/png?text=LearnLab" alt="LearnLab Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">LearnLab Platform</h3>
+                        <p class="text-gray-300 mb-4">Interactive learning platform with real-time collaboration and AI-assisted tutoring.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT Project -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=SmartHome" alt="SmartHome Hub" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">SmartHome Hub</h3>
+                        <p class="text-gray-300 mb-4">IoT platform for home automation with voice control and energy optimization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Flutter</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">AWS IoT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Projects Grid -->
+    <section class="py-24 bg-dark/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Industry Solutions</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AI Analytics Platform -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=DataInsight+AI" alt="DataInsight AI Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">DataInsight AI Platform</h3>
+                        <p class="text-gray-300 mb-4">Enterprise analytics platform with predictive modeling and real-time business insights.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logistics Platform -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/FF3399/FFFFFF/png?text=LogiTrack" alt="LogiTrack Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">LogiTrack Platform</h3>
+                        <p class="text-gray-300 mb-4">Smart logistics management system with real-time tracking and route optimization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Angular</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HR Management -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=TalentHub" alt="TalentHub HR" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">TalentHub HR</h3>
+                        <p class="text-gray-300 mb-4">Comprehensive HR platform with AI-powered recruitment and employee management.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Django</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Management -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/FF3399/FFFFFF/png?text=RestaurantOS" alt="RestaurantOS" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">RestaurantOS</h3>
+                        <p class="text-gray-300 mb-4">All-in-one restaurant management system with POS, inventory, and online ordering.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Express</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel Booking -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/8A2BE2/FFFFFF/png?text=TravelEase" alt="TravelEase Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">TravelEase Platform</h3>
+                        <p class="text-gray-300 mb-4">Smart travel booking platform with AI-powered recommendations and trip planning.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Next.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">GraphQL</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="group bg-dark/30 rounded-2xl overflow-hidden hover:bg-dark/40 transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://placehold.co/600x400/FF3399/FFFFFF/png?text=PropertyPro" alt="PropertyPro Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">PropertyPro Platform</h3>
+                        <p class="text-gray-300 mb-4">Real estate platform with virtual tours and AI-powered property valuation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">FastAPI</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">ElasticSearch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <p>Projects Completed</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">30+</div>
+                    <p>Happy Clients</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">95%</div>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <p>Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to Build Your Next Project?</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto text-gray-300">
+                Let's transform your idea into a successful digital solution. Our team is ready to help you achieve your goals.
+            </p>
+            <a href="/contact.html" class="inline-block bg-primary hover:bg-primary/80 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                Start Your Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark/80 backdrop-blur-lg py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <span class="text-3xl text-primary font-bold">&#60;/&#62;</span>
+                        <span class="ml-2 text-xl font-bold">devs.solutions</span>
+                    </div>
+                    <p class="text-gray-400">Digital solutions for innovative startups</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html#web" class="hover:text-primary">Web Development</a></li>
+                        <li><a href="services.html#mobile" class="hover:text-primary">Mobile Development</a></li>
+                        <li><a href="services.html#management" class="hover:text-primary">Management</a></li>
+                        <li><a href="services.html#modernization" class="hover:text-primary">Modernization</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about-us.html" class="hover:text-primary">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-primary">Portfolio</a></li>
+                        <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@devs.solutions</li>
+                        <li>📱 +34 600 123 456</li>
+                        <li>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2024 devs.solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-dark/95 rounded-3xl p-8 max-w-md w-full mx-4 relative">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-6 text-primary">Contact Us</h3>
+            <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                    <input type="email" id="email" required
+                        class="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="your@email.com">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number (Optional)</label>
+                    <input type="tel" id="phone"
+                        class="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="+1 (234) 567-8900">
+                </div>
+                <button type="submit" 
+                    class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.getElementById('contactModal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.getElementById('contactModal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Aquí puedes agregar la lógica para enviar los datos
+            console.log('Form submitted:', { email, phone });
+            
+            // Mostrar mensaje de éxito
+            alert('¡Gracias! Nos pondremos en contacto contigo pronto.');
+            closeContactModal();
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeContactModal();
+            }
+        });
+    </script>
+</body>
+</html> 
